@@ -723,6 +723,7 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Purchasing: 1
     UNet: 1
   luminIcon:
     m_Name: 
@@ -743,11 +744,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: d95ec847-f998-4159-9744-ebfc6f4f3901
+  cloudProjectId: 26fbd072-05c6-4eaa-9747-f14745488af9
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Many-Money-Mobile-Game
-  organizationId: unity_c73c6ac810874a8347a8
+  organizationId: whtalirl
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
