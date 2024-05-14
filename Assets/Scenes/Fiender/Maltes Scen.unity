@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 599424463}
   - component: {fileID: 599424462}
   m_Layer: 0
-  m_Name: Methhead
+  m_Name: DepressedSuici
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
