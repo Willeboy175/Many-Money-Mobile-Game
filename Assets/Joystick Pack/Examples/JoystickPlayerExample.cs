@@ -11,6 +11,11 @@ public class JoystickPlayerExample : MonoBehaviour
     public void FixedUpdate()
     {
         Vector3 direction = Vector3.forward * variableJoystick.Vertical + Vector3.right * variableJoystick.Horizontal;
-        rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+        if (rb.velocity.magnitude < 20)
+        {
+            rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.Impulse);
+        }
+        //rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+        //rb.(rb.position + direction * speed * Time.deltaTime);
     }
 }
