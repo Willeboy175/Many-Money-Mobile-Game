@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class EnemySuicide : EnemyBase
 {
+    public float explodeSpeed;
+    public float explodeTimer;
+
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        //if (MinDist <= )
+        //if (CurrentDist <= MinDist)
         {
-
+            //Enemyslow, explode after x amounts of time
         }
     }
 }
