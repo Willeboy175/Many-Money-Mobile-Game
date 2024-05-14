@@ -8,7 +8,9 @@ public class pachinko : MonoBehaviour
     int dropAmount;
     int money = 500;
     public GameObject ball;
-    public Vector3 spawnPos;
+    public List<Vector3> spawnPos = new List<Vector3>();
+    List<GameObject> currentBalls = new List<GameObject>();
+    bool canDrop = true;
 
     public TextMeshProUGUI amountText;
     public TextMeshProUGUI moneyText;
@@ -48,16 +50,33 @@ public class pachinko : MonoBehaviour
 
     public void dropThings()
     {
-        for (int i = 0; i < dropAmount; i++)
+        if(canDrop && dropAmount * 5 < money)
         {
-            Invoke("SpawnObject", i);
-            money -= 5;
+            canDrop = false;
+            Invoke("resetDrop", dropAmount);
+            for (int i = 0; i < currentBalls.Count; i++)
+            {
+                Destroy(currentBalls[i]);
+                currentBalls.Clear();
+            }
+
+            for (int i = 0; i < dropAmount; i++)
+            {
+                Invoke("SpawnObject", i);
+                money -= 5;
+            }
         }
     }
 
     void SpawnObject()
     {
-        GameObject newest = Instantiate(ball, spawnPos, Quaternion.identity);
-        newest.GetComponent<Rigidbody>().AddForce(Random.Range(-1, 1), 0, 0);
+        int chooseSpawn = Random.Range(0, 4);
+        GameObject newest = Instantiate(ball, spawnPos[chooseSpawn], Quaternion.identity);
+        currentBalls.Add(newest);
+    }
+
+    void resetDrop()
+    {
+        canDrop = true;
     }
 }
