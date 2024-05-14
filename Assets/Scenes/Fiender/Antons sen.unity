@@ -458,7 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e8f3eaf57ba0d4abf42ed073c6a0a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cube: {fileID: 7122199919549432757, guid: 7dfbe01993576314792d21a3a9cc588f, type: 3}
+  greg: {fileID: 7122199919549432757, guid: 84fd694b1346d2340ab63a447b5cb044, type: 3}
 --- !u!4 &1785253311
 Transform:
   m_ObjectHideFlags: 0
