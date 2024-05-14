@@ -11,7 +11,7 @@ public class EnemySuicide : EnemyBase
 
     void Update()
     {
-        if (MinDist <= )
+        //if (MinDist <= )
         {
 
         }
