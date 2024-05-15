@@ -4,27 +4,31 @@ using UnityEngine;
 
 public class RandomizerScript : MonoBehaviour
 {
-    [Tooltip("Chansen att få varje item, Alla värden tillsammans ska vara lika med 1")]
-    public float[] tierRates;
+    [Tooltip("Chansen att få varje tier, Alla värden tillsammans ska vara lika med värdet i tierEntries")]
+    public int[] tierRates = new int[] { 5000, 3500, 1200, 299, 1 };
 
     [Tooltip("Vilken tier varje entry i Rates motsvarar")]
-    public string[] tierNames;
+    public string[] tierNames = new string[] { "Common", "Uncommon", "Rare", "Epic", "legendary" };
 
-    [Tooltip("Hur många entries Dictionaryn ska ha")]
+    [Tooltip("Hur många entries dictionary för tiers ska ha")]
     public int tierEntries = 10000;
+    [Space]
 
-    public int itemsPerTier = 10;
+    [Tooltip("Antal items i varje tier")]
+    public int[] itemsInTiers;
 
-    Dictionary<int, int> tiers = new Dictionary<int, int>(); //ID för varje entry och vilken plats ett visst item har i rates
+    Dictionary<int, int> tiersDictionary = new Dictionary<int, int>(); //Används för randomization av tiers
 
     // Start is called before the first frame update
     void Start()
     {
-        CreateTiers(tierRates.Length, tierEntries);
+        CreateTiersDictionary(tierRates.Length);
 
-        /*for (int i = 0; i < entries; i++) //Skriver ut dictionaryn för debugging
+        /*for (int i = 0; i < tierEntries; i++) //Skriver ut tiers för debugging
         {
-            print(items[i]);
+            int x = tiersDictionary[i];
+            string text = tierNames[x];
+            print(text);
         }*/
     }
 
@@ -37,30 +41,32 @@ public class RandomizerScript : MonoBehaviour
         }
     }
 
-    public void Randomize() //Väljer en slumpmässig variabel i items
+    public void Randomize()
     {
-        int randomValue = Random.Range(0, tierEntries); //Väljer ett slumpmässigt värde mellan 0 och hur stor entries är
-        int x = tiers[randomValue]; //Sparar vilket entry randomValue motsvarar i items
-        string text = tierNames[x]; //Vilken tier x motsvarar
+        int randomValue = Random.Range(0, tierEntries); //Väljer ett slumpmässigt värde mellan 0 och hur stor tierEntries är
+        int tierRepresentation = tiersDictionary[randomValue]; //Sparar vilket entry randomValue motsvarar för tier
 
-        int item = Random.Range(0, itemsPerTier);
+        int item = Random.Range(0, itemsInTiers[tierRepresentation]); //Vilket item i motsvarande tier
 
+        //AddItem funktion som lägger till det item spelaren fick
+
+        string text = tierNames[tierRepresentation]; //Vilken tier tierRepresentation motsvarar
         print("U got " + text + " item " + item);
     }
 
-    void CreateTiers(int arrayLenght, int dictionaryLenght) //Skapar Item dictionaryn
+    private void CreateTiersDictionary(int arrayLenght) //Skapar tierDictionary
     {
         int a = 0;
         int b = 0;
-        for (int i = 0; i < arrayLenght; i++) //Ändrar vilket värde som sparas i items
+
+        for (int i = 0; i < arrayLenght; i++) //Ändrar vilket värde som sparas i tiersDictionary
         {
-            for (int x = a; x < (tierRates[i] * dictionaryLenght + a); x++) //Går igenom och lägger till värden i items
+            for (int x = a; x < (tierRates[i] + a); x++) //Går igenom och lägger till värden i tiersDictionary
             {
-                tiers.Add(x, i);
+                tiersDictionary.Add(x, i); //x motsvarar nyckel som går från 0 och upp, i motsvarar tier
                 b = x;
             }
-            a = b + 1; //Sparar vart i items funktionen är
+            a = b + 1; //Sparar vart i tiersDictionary funktionen är
         }
-        
     }
 }
