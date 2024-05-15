@@ -152,19 +152,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86387145a0448544db9660afe3e54ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rates:
+  tierRates:
   - 0.5
   - 0.35
   - 0.12
   - 0.0299
   - 0.0001
-  tiers:
+  tierNames:
   - Common
   - Uncommon
   - Rare
   - Epic
   - Legendary
-  entries: 10000
+  tierEntries: 10000
 --- !u!4 &514793754
 Transform:
   m_ObjectHideFlags: 0

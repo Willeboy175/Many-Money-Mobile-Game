@@ -5,20 +5,22 @@ using UnityEngine;
 public class RandomizerScript : MonoBehaviour
 {
     [Tooltip("Chansen att få varje item, Alla värden tillsammans ska vara lika med 1")]
-    public float[] rates;
+    public float[] tierRates;
 
     [Tooltip("Vilken tier varje entry i Rates motsvarar")]
-    public string[] tiers;
+    public string[] tierNames;
 
     [Tooltip("Hur många entries Dictionaryn ska ha")]
-    public int entries = 10000;
+    public int tierEntries = 10000;
 
-    Dictionary<int, int> items = new Dictionary<int, int>(); //ID för varje entry och vilken plats ett visst item har i rates
+    public int itemsPerTier = 10;
+
+    Dictionary<int, int> tiers = new Dictionary<int, int>(); //ID för varje entry och vilken plats ett visst item har i rates
 
     // Start is called before the first frame update
     void Start()
     {
-        CreateItems(rates.Length, entries);
+        CreateTiers(tierRates.Length, tierEntries);
 
         /*for (int i = 0; i < entries; i++) //Skriver ut dictionaryn för debugging
         {
@@ -31,28 +33,30 @@ public class RandomizerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E)) //Temporär för testande
         {
-            print("u got " + Randomize());
+            Randomize();
         }
     }
 
-    public string Randomize() //Väljer en slumpmässig variabel i items
+    public void Randomize() //Väljer en slumpmässig variabel i items
     {
-        int randomValue = Random.Range(0, entries); //Väljer ett slumpmässigt värde mellan 0 och hur stor entries är
-        int x = items[randomValue]; //Sparar vilket entry randomValue motsvarar i items
-        string text = tiers[x]; //Vilken tier x motsvarar 
+        int randomValue = Random.Range(0, tierEntries); //Väljer ett slumpmässigt värde mellan 0 och hur stor entries är
+        int x = tiers[randomValue]; //Sparar vilket entry randomValue motsvarar i items
+        string text = tierNames[x]; //Vilken tier x motsvarar
 
-        return text;
+        int item = Random.Range(0, itemsPerTier);
+
+        print("U got " + text + " item " + item);
     }
 
-    void CreateItems(int arrayLenght, int dictionaryLenght) //Skapar Item dictionaryn
+    void CreateTiers(int arrayLenght, int dictionaryLenght) //Skapar Item dictionaryn
     {
         int a = 0;
         int b = 0;
         for (int i = 0; i < arrayLenght; i++) //Ändrar vilket värde som sparas i items
         {
-            for (int x = a; x < (rates[i] * dictionaryLenght + a); x++) //Går igenom och lägger till värden i items
+            for (int x = a; x < (tierRates[i] * dictionaryLenght + a); x++) //Går igenom och lägger till värden i items
             {
-                items.Add(x, i);
+                tiers.Add(x, i);
                 b = x;
             }
             a = b + 1; //Sparar vart i items funktionen är
