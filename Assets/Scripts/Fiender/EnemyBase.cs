@@ -28,13 +28,17 @@ public class EnemyBase : MonoBehaviour
     void Update()
     {
         Move();
+
+        if (hp <= 0)
+        {
+            Die();
+        }
     }
 
     public virtual bool AtkSpeed()
     {
         if (atkTimer < atkSpeed)
         {
-            print("2 fast");
             return false;
         }
         atkTimer = 0;
@@ -51,6 +55,19 @@ public class EnemyBase : MonoBehaviour
             {
                 // här den kan göra något om den kommer nära spelaren
             }
+        }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+
+    public void OnTriggerEnter(Collision collision)
+    {
+        if (collision.collider.gameObject.CompareTag("Player"))
+        {
+
         }
     }
 }
