@@ -574,7 +574,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 23.12389, z: 180.05817, w: 15.754065}
+  m_margin: {x: -72.9493, y: 23.12389, z: 117.59944, w: 15.754065}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -604,7 +604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 163.7, y: 12.7}
+  m_AnchoredPosition: {x: 94.7, y: -3.6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &774398638
@@ -797,7 +797,7 @@ GameObject:
   - component: {fileID: 1207166345}
   - component: {fileID: 1207166344}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Daily create text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -819,7 +819,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 32, y: 11.5}
+  m_AnchoredPosition: {x: 32, y: 5.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1207166344
@@ -1076,7 +1076,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 18
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1112,7 +1112,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 1.9431067}
+  m_margin: {x: 0, y: 0, z: 0, w: 12.245726}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1265,13 +1265,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPairs:
   - button: {fileID: 205257571}
-    tmpText: {fileID: 450479320}
+    amountLeftTmp: {fileID: 450479320}
+    purchasedTmp: {fileID: 1375046420}
+    offerNameText: Special offer
     value: 0
     maxClicks: 3
     purchasable: 1
     isDaily: 0
   - button: {fileID: 1694542405}
-    tmpText: {fileID: 1746042466}
+    amountLeftTmp: {fileID: 1746042466}
+    purchasedTmp: {fileID: 0}
+    offerNameText: Daily create
     value: 0
     maxClicks: 1
     purchasable: 0
@@ -1289,7 +1293,7 @@ GameObject:
   - component: {fileID: 1694542406}
   - component: {fileID: 1694542405}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Daily reward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1410,7 +1414,7 @@ GameObject:
   - component: {fileID: 1746042467}
   - component: {fileID: 1746042466}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Time left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1432,7 +1436,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 161, y: 15.5}
+  m_AnchoredPosition: {x: 149, y: 14}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1746042466
@@ -1518,7 +1522,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1.4548569, y: 30.821543, z: 157.62894, w: 3.1905499}
+  m_margin: {x: -79.48039, y: 30.821543, z: 157.62894, w: 3.1905499}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
