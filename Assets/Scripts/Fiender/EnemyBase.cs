@@ -63,11 +63,11 @@ public class EnemyBase : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void OnTriggerEnter(Collision collision)
+    /*public void OnTriggerEnter(Collision collision)
     {
         if (collision.collider.gameObject.CompareTag("Player"))
         {
 
         }
-    }
+    }*/
 }
