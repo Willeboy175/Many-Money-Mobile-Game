@@ -25,6 +25,11 @@ public class EnemyBase : MonoBehaviour
         player = rogg.GetComponent<Transform>();
     }
 
+    void Update()
+    {
+        Move();
+    }
+
     public virtual bool AtkSpeed()
     {
         if (atkTimer < atkSpeed)

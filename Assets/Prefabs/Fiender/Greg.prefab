@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 47277691396652745}
   - component: {fileID: 8760427871149109917}
   - component: {fileID: 6046276378759464406}
-  - component: {fileID: 1940575105107183068}
+  - component: {fileID: -2602281934273623550}
   m_Layer: 0
   m_Name: Greg
   m_TagString: Enemy
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1940575105107183068
+--- !u!114 &-2602281934273623550
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,8 +143,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7122199919549432757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7c357ba1387dc64fa079d37798d0e35, type: 3}
+  m_Script: {fileID: 11500000, guid: c206297409e2e0e4bba76d54c91ddb7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 3
+  dmg: 1
+  atkSpeed: 1
+  atkTimer: 1
   player: {fileID: 0}
+  MoveSpeed: 4
+  MaxDist: 10
+  MinDist: 5
   rogg: {fileID: 0}
