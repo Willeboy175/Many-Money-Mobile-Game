@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 28392756}
   m_Layer: 0
   m_Name: "R\xE5ger"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 599424462}
   m_Layer: 0
   m_Name: DepressedSuici
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,10 +266,11 @@ MonoBehaviour:
   dmg: 10
   atkSpeed: 99
   atkTimer: 99
-  Player: {fileID: 0}
+  player: {fileID: 0}
   MoveSpeed: 3
   MaxDist: 5
   MinDist: 2
+  rogg: {fileID: 0}
   explodeSpeed: 0
   explodeTimer: 0
 --- !u!136 &599424463
@@ -470,7 +471,7 @@ GameObject:
   - component: {fileID: 953476345}
   m_Layer: 0
   m_Name: "G\xF6ran"
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -604,10 +605,11 @@ MonoBehaviour:
   dmg: 1
   atkSpeed: 5
   atkTimer: 5
-  Player: {fileID: 28392759}
+  player: {fileID: 0}
   MoveSpeed: 5
   MaxDist: 4
   MinDist: 1
+  rogg: {fileID: 0}
 --- !u!1 &1064313930
 GameObject:
   m_ObjectHideFlags: 0
