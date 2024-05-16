@@ -156,15 +156,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134c5dc9989fbe543a7936559f1d5e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
-  dmg: 0
-  atkSpeed: 0
-  atkTimer: 0
+  hp: 50
+  dmg: 5
+  atkSpeed: 5
+  atkTimer: 5
   player: {fileID: 0}
-  MoveSpeed: 0
-  MaxDist: 0
-  MinDist: 0
+  MoveSpeed: 2
+  MaxDist: 10
+  MinDist: 5
   rogg: {fileID: 0}
+  playerTag: Player
 --- !u!54 &26327194
 Rigidbody:
   m_ObjectHideFlags: 0
