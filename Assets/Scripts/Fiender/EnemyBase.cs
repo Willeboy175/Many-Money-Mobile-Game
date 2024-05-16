@@ -42,6 +42,7 @@ public class EnemyBase : MonoBehaviour
             return false;
         }
         atkTimer = 0;
+        print("Attack");
         return true;
     }
 
