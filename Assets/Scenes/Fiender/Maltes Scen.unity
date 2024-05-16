@@ -266,7 +266,7 @@ MonoBehaviour:
   dmg: 10
   atkSpeed: 99
   atkTimer: 99
-  player: {fileID: 0}
+  player: {fileID: 28392759}
   MoveSpeed: 3
   MaxDist: 5
   MinDist: 2
