@@ -17,25 +17,23 @@ public class EnemyBase : MonoBehaviour
     public int MinDist;
 
     public GameObject rogg;
+    public string playerTag = "Player";
 
     void Start()
     {
         rogg = GameObject.FindWithTag("Player");
-
         player = rogg.GetComponent<Transform>();
     }
-
     void Update()
     {
+        atkTimer += Time.deltaTime;
         Move();
-
         if (hp <= 0)
         {
             Die();
         }
     }
-
-    public virtual bool AtkSpeed()
+    public virtual bool Attack()
     {
         if (atkTimer < atkSpeed)
         {
@@ -45,7 +43,6 @@ public class EnemyBase : MonoBehaviour
         print("Attack");
         return true;
     }
-
     public virtual void Move()
     {
         transform.LookAt(player);
@@ -57,18 +54,16 @@ public class EnemyBase : MonoBehaviour
                 // här den kan göra något om den kommer nära spelaren
             }
         }
-    }
-
+    } 
     public void Die()
     {
         Destroy(gameObject);
     }
-
-    /*public void OnTriggerEnter(Collision collision)
+    void OnCollisionStay(Collision collisionInfo)
     {
-        if (collision.collider.gameObject.CompareTag("Player"))
+        if (collisionInfo.gameObject.tag == playerTag)
         {
-
+            Attack();
         }
-    }*/
+    }
 }
