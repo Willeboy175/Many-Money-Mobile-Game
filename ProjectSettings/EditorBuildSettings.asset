@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Gambling Minigame/GamblingMenu.unity
+    guid: 492a6219dcac9cb46b14048f31497b24
+  - enabled: 1
+    path: Assets/Scenes/Gambling Minigame/pachinko scen.unity
+    guid: 8482fa56c559d3b4a9623c174612c9c5
   m_configObjects: {}
