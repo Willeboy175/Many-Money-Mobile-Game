@@ -535,6 +535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 514793754}
   - component: {fileID: 514793753}
+  - component: {fileID: 514793755}
   m_Layer: 0
   m_Name: LootboxOpenManager
   m_TagString: Untagged
@@ -555,12 +556,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tierRates: 88130000ac0d0000b00400002b01000001000000
-  tierNames:
-  - Common
-  - Uncommon
-  - Rare
-  - Epic
-  - legendary
   tierEntries: 10000
   itemsInTiers: 0800000006000000030000000400000002000000
 --- !u!4 &514793754
@@ -578,6 +573,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 524535247}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &514793755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514793752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834d7bdb691877d4f83c50e099c3646e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 3
+  tierText: {fileID: 193722079}
+  itemText: {fileID: 331742404}
+  tierColors:
+  - serializedVersion: 2
+    rgba: 4278255360
+  - serializedVersion: 2
+    rgba: 4278236160
+  - serializedVersion: 2
+    rgba: 4294932480
+  - serializedVersion: 2
+    rgba: 4294901960
+  - serializedVersion: 2
+    rgba: 4278231807
+  tierNames:
+  - Common
+  - Uncommon
+  - Rare
+  - Epic
+  - legendary
 --- !u!1 &524535243
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,8 +702,8 @@ RectTransform:
   - {fileID: 514793754}
   - {fileID: 1093915714}
   - {fileID: 1363589290}
-  - {fileID: 1697279702}
   - {fileID: 959186633}
+  - {fileID: 1697279702}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1041,7 +1068,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1093915716}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 514793755}
+        m_TargetAssemblyTypeName: LootboxOpenMenu, Assembly-CSharp
+        m_MethodName: OpenLootbox
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1093915716
 MonoBehaviour:
   m_ObjectHideFlags: 0
