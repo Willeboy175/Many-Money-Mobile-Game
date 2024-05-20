@@ -5,11 +5,12 @@ using UnityEngine;
 public class Spawnir : MonoBehaviour
 {
 
-    public GameObject greg;
+    public GameObject enemy;
 
-    float timer = 5f;
+    [SerializeField]
+    public float timer;
 
-    
+    public float ySpawn;
 
     void Update()
     {
@@ -26,7 +27,7 @@ public class Spawnir : MonoBehaviour
     void SpawnCube()
     {
 
-        Vector3 position = new Vector3(Random.Range(-20.0F, 20.0F), 1, Random.Range(-20.0F, 20.0F));
-        Instantiate(greg, position, Quaternion.identity);
+        Vector3 position = new Vector3(Random.Range(-20.0F, 20.0F), ySpawn, Random.Range(-20.0F, 20.0F));
+        Instantiate(enemy, position, Quaternion.identity);
     }
 }
