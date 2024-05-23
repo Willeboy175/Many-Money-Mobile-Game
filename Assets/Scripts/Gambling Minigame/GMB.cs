@@ -16,9 +16,12 @@ public class mainmenu : MonoBehaviour
 {
     public void plinko()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //fixa så att plinko scenen är den det bytts till
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
     }
-
+    public void slotchanger()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+    }
     public void quit()
     {
         Application.Quit();
