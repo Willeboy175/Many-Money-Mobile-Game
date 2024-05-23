@@ -4,5 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Joystick Pack/Examples/Example Scene.unity
+    guid: 414bddd31c5ea4f4c9f5d1452e5bbb41
+  m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
+      guid: d80aae604a7c9e04cb535f18d182d347, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 0f96edf635c07ec47a25f08d9f7ba1c8,
+      type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
+      guid: 876c4e59666959f4bab39159d17ce327, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
+      guid: bff29b71b688cb6479523f162cbcc838, type: 2}
