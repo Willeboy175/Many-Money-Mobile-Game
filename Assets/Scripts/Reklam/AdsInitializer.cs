@@ -93,10 +93,15 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener, IU
 
     private void Update()
     {
+        //Here's a simple of example of how to make a interstitial ad appear on screen!
+       //Makes sure that initialization is finished before loading ad.
        if(AdsInitialized == true)
         {
+            //Loads the next ad to the unit.
             LoadAd();
+            //Shows the ad on screen.
             ShowAd();
+            //sets the initialization back to false so that an ad doesn't pop up after each frame.
             AdsInitialized = false;
         }
     }
