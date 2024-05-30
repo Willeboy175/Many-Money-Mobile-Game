@@ -17,7 +17,7 @@ public class EnemyBase : MonoBehaviour
     public int MinDist;
 
     public GameObject rogg;
-    public string playerTag = "Player";
+    
 
     void Start()
     {
@@ -61,7 +61,7 @@ public class EnemyBase : MonoBehaviour
     }
     void OnCollisionStay(Collision collisionInfo)
     {
-        if (collisionInfo.gameObject.tag == playerTag)
+        if (collisionInfo.gameObject.tag == "Player")
         {
             Attack();
         }
