@@ -8,6 +8,7 @@ public class SlotMachineSteup : MonoBehaviour
     public Sprite[] images;
     public GameObject[,] slots;
     public int rowLength, rowSize;
+    int winIndex;
 
     void Start()
     {
@@ -28,9 +29,51 @@ public class SlotMachineSteup : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public int CheckWinValueLine(int line)
     {
+        string[] id = new string[rowLength];
+        for (int i = 0; i < rowLength; i++)
+        {
+            id[i] = slots[i, line].GetComponent<Image>().sprite.name;
+        }
+        for (int i = 0; i < rowLength; i++)
+        {
+            if (slots[0, line].GetComponent<Image>().sprite.name == id[i])
+            {
+                print("SAME");
+                winIndex += 1;
+            }
+            if (slots[1, line].GetComponent<Image>().sprite.name == id[i])
+            {
+                print("SAME");
+                winIndex += 1;
+            }
+            if (slots[2, line].GetComponent<Image>().sprite.name == id[i])
+            {
+                print("SAME");
+                winIndex += 1;
+            }
+        }
         
+        if (winIndex > 4)
+        {
+            winIndex = 2; //win 2x on two the on same icon
+            if (winIndex > 5)
+            {
+                winIndex = 10; //win 10x on all the on same icon
+            }
+        }
+        else
+        {
+            winIndex = 0; //otherwise no win
+        }
+        return winIndex;
+    }
+    public void RerollRowImage(int row)
+    {
+        for (int i = 0; i < slots.Length / rowLength; i++)
+        {
+            slots[row, i].GetComponent<Image>().sprite = images[Random.Range(0, images.Length - 1)];
+        }
     }
 }
